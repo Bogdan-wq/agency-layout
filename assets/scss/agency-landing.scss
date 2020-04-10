@@ -71,6 +71,17 @@ body {
   color:$color;
   border:$border;
 }
+@mixin intro($device-width) {
+  @media screen and (max-width: $device-width) {
+    text-align: center;
+    &.intro {
+      justify-items: center;
+    }
+    .intro__text.text_decor::after {
+      margin: 35px auto 0;
+    }
+  }
+}
 .link {
   padding:15px 60px;
   font-size:18px;
@@ -127,14 +138,7 @@ body {
   }
   &__intro {
     grid-area:header-intro;
-    //================================================================
-    @media screen and (max-width: 1150px) {
-      text-align: center;
-      &.intro {
-        justify-items: center;
-      }
-    }
-    //================================================================
+    @include intro(1150px);
 
   }
   &__video {
@@ -236,13 +240,11 @@ body {
 
   &__intro {
     grid-area:provide-intro;
-    //================================================================
     @media screen and (max-width: 950px) {
       text-align: center;
       padding-bottom:70px;
       justify-items: center;
     }
-    //================================================================
   }
 
   &__services {
@@ -286,7 +288,6 @@ body {
   @media screen and (max-width: 950px) {
     padding:60px 0;
   }
-  //================================================================
   &__text {
     max-width: 520px;
     margin: 35px auto 0;
@@ -295,7 +296,6 @@ body {
     }
 
   }
-  //================================================================
   &__templates {
     margin-top:80px;
     @media screen and (max-width: 850px) {
@@ -393,17 +393,7 @@ body {
   &__intro {
     grid-area: team-intro;
     justify-items: start;
-    //================================================================
-    @media screen and (max-width: 1050px) {
-      text-align: center;
-      &.intro {
-        justify-items: center;
-      }
-      .intro__text.text_decor::after {
-        margin: 35px auto 0;
-      }
-      //================================================================
-    }
+    @include intro(1050px);
   }
 
 
@@ -592,18 +582,8 @@ body {
   }
 
   &__intro {
-    //================================================================
-    @media screen and (max-width: 1030px) {
-      text-align: center;
-      &.intro {
-        justify-items: center;
-      }
-      .intro__text.text_decor::after {
-        margin: 35px auto 0;
-      }
+        @include intro(1050px);
     }
-    //================================================================
-  }
 
   &__form-contact-example {
     margin-top:75px;
@@ -749,3 +729,14 @@ body {
     justify-content: start;
   }
 }
+
+
+
+
+
+
+
+
+
+
+

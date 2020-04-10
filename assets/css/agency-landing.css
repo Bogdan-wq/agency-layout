@@ -152,6 +152,9 @@ body {
   .header__intro.intro {
     justify-items: center;
   }
+  .header__intro .intro__text.text_decor::after {
+    margin: 35px auto 0;
+  }
 }
 .header__video {
   grid-area: header-video;
@@ -585,7 +588,7 @@ body {
     width: 85%;
   }
 }
-@media screen and (max-width: 1030px) {
+@media screen and (max-width: 1050px) {
   .get-in-touch__intro {
     text-align: center;
   }
